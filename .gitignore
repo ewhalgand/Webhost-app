@@ -3,7 +3,7 @@ node_modules/
 pnpm-lock.yaml
 
 # Turbo
-turbo/
+.turbo/
 dist/
 .out/
 .cache/
