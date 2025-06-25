@@ -1,0 +1,55 @@
+# Node.js
+node_modules/
+pnpm-lock.yaml
+
+# Turbo
+turbo/
+dist/
+.out/
+.cache/
+
+# Vite / React
+*.log
+.env
+.env.*.local
+.vite/
+coverage/
+build/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.log
+*.tmp
+bin/
+build/
+coverage/
+
+# Go workspaces
+go.sum
+go.work
+go.work.sum
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.sw?
+
+# Misc
+*.local
+*.tgz
+*.zip
+
+# Optional: monorepo packages
+apps/**/node_modules/
+apps/**/dist/
+apps/**/build/
