@@ -36,7 +36,7 @@ func (h *UsersHandler) RegisterUsers(ctx *gin.Context) {
 
 	if err := h.DB.Create(&user).Error; err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{
-			"error": "Erreur lors de la creation du compte",
+			"error": "Erreur lors de la creation du compte ou compte déjà existant",
 		})
 		return
 	}
