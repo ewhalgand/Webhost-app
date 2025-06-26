@@ -53,6 +53,7 @@ func (h *UsersHandler) UpdateUser(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"error": "Échec de la mise a jour du profil",
 		})
+		return
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{
