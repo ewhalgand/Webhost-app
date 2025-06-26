@@ -20,6 +20,8 @@ func main() {
 	r := gin.Default()
 	r.Use(cors.New(config.CorsConfig()))
 
+	r.Static("/uploads", "./uploads")
+
 	dbHandler := db.InitDB(configEnv.DB_URL)
 
 	users.UserRoute(r, dbHandler)
