@@ -16,6 +16,7 @@ func UserRoute(router *gin.Engine, db *gorm.DB) {
 
 	userRoutes := router.Group("/api")
 	{
+		userRoutes.GET("/user", handler.GetUser)
 		userRoutes.POST("/register", handler.RegisterUsers)
 		userRoutes.POST("/login", handler.LoginUsers)
 	}
