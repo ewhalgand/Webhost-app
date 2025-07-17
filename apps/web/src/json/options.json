@@ -1,0 +1,7 @@
+[
+  { "ext": ".fr", "price": "7,99€" },
+  { "ext": ".com", "price": "9,99€" },
+  { "ext": ".site", "price": "0,99€" },
+  { "ext": ".org", "price": "6,99€" },
+  { "ext": ".net", "price": "11,99€" }
+]

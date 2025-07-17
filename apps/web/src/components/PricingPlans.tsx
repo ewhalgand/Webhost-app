@@ -1,67 +1,9 @@
-export default function PricingPlans() {
-  const plans = [
-    {
-      title: "STARTER",
-      price: "8,49€",
-      per: "/mois",
-      features: [
-        "1 Site Web",
-        "50 Go de stockage SSD",
-        "1 Compte Email",
-        "100 Go Bande passante",
-        "2 Bases de données",
-        "SSL gratuit",
-        "DNS protégé par Cloudflare",
-        "Sauvegardes hebdomadaires",
-        "1 compte FTP",
-        "Assistance 7j/7",
-        "Garantie de remboursement pendant 30 jours",
-      ],
-      highlight: false,
-    },
-    {
-      title: "PREMIUM",
-      price: "15,99€",
-      per: "/mois",
-      features: [
-        "100 Sites web",
-        "100 Go de stockage SSD",
-        "Email illimité",
-        "Bande passante illimitée",
-        "Bases de données illimitées",
-        "SSL gratuit",
-        "DNS protégé par Cloudflare",
-        "Sauvegardes hebdomadaires",
-        "Comptes FTP illimités",
-        "Assistance 7j/7",
-        "Garantie de remboursement pendant 30 jours",
-      ],
-      highlight: true,
-    },
-    {
-      title: "PRO",
-      price: "20,99€",
-      per: "/mois",
-      features: [
-        "100 Sites web",
-        "200 Go de stockage SSD",
-        "Email illimité",
-        "Bande passante illimitée",
-        "Bases de données illimitées",
-        "SSL gratuit",
-        "DNS protégé par Cloudflare",
-        "Sauvegardes hebdomadaires",
-        "Comptes FTP illimités",
-        "Assistance 7j/7",
-        "Garantie de remboursement pendant 30 jours",
-      ],
-      highlight: false,
-    },
-  ];
+import plans from "../json/plans.json";
 
+export default function PricingPlans() {
   return (
     <div className="px-4 py-10">
-      <h2 className="mb-10 text-xl font-semibold text-center sm:text-2xl">
+      <h2 className="mb-10 text-xl font-semibold text-center lg:mb-28 sm:text-2xl">
         Choisissez un plan pour votre site web
       </h2>
 
@@ -104,7 +46,7 @@ export default function PricingPlans() {
               ))}
             </ul>
             <button
-              className={`w-full py-2 rounded-full font-semibold transition ${
+              className={`w-full py-2 rounded-full cursor-pointer font-semibold transition ${
                 plan.highlight
                   ? "bg-white text-[#27DEBF] hover:bg-[#f0f0f0]"
                   : "bg-[#27DEBF] text-white hover:bg-[#27dec0d5]"

@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "/icons/price.svg",
+    "title": "Meilleur prix",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat consectetur nullam a nunc, ornare."
+  },
+  {
+    "icon": "/icons/easy.svg",
+    "title": "Super facile à utiliser",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat consectetur nullam a nunc, ornare."
+  },
+  {
+    "icon": "/icons/support.svg",
+    "title": "Assistance dédiée",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat consectetur nullam a nunc, ornare."
+  }
+]

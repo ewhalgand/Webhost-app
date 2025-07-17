@@ -1,14 +1,11 @@
-export default function DomainSearch() {
-  const options = [
-    { ext: ".fr", price: "7,99€" },
-    { ext: ".com", price: "9,99€" },
-    { ext: ".site", price: "0,99€" },
-    { ext: ".org", price: "6,99€" },
-    { ext: ".net", price: "11,99€" },
-  ];
+import options from "../json/options.json";
 
+export default function DomainSearch() {
   return (
-    <div className="bg-[#27DEBF] text-white p-6 sm:p-8 rounded-3xl text-center">
+    <div
+      className="bg-[#27DEBF] text-white p-6 sm:p-8 rounded-3xl text-center"
+      id="domain"
+    >
       <h2 className="mb-6 text-xl font-medium md:text-2xl">
         Réserver, enregistrer un nom de domaine :
       </h2>

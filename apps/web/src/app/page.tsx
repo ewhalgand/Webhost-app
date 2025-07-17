@@ -2,6 +2,7 @@ import Image from "next/image";
 import Banner_host from "/public/banner_host.png";
 import DomainSearch from "@/components/DomainSearch";
 import PricingPlans from "@/components/PricingPlans";
+import ChooseUs from "@/components/ChooseUs";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
             Commence ton essaie gratuit dès maintenant
           </p>
           <a
-            href="#"
+            href="#pricing-plan"
             className="bg-[#27DEBF] text-white font-semibold uppercase py-3 px-5 rounded-full shadow-2xl transition-all duration-200 hover:px-6 hover:tracking-widest"
           >
             Commencer
@@ -27,8 +28,11 @@ export default function Home() {
       <section className="p-6 mt-24 lg:px-20 lg:mt-12">
         <DomainSearch />
       </section>
-      <section className="mt-24 lg:mt-12">
+      <section className="mt-24 lg:mt-28" id="pricing-plan">
         <PricingPlans />
+      </section>
+      <section className="mt-24 lg:mt-28">
+        <ChooseUs />
       </section>
     </>
   );

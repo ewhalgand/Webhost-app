@@ -4,14 +4,33 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import webhost_logo from "../../public/WPHost.png";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (pathname === path) {
+      return "bg-[rgba(39,222,191,0.19)] text-[#27DEBF] px-4 p-2 rounded-full";
+    }
+
+    if (pathname === "/" && path === "/register") {
+      return "bg-[rgba(39,222,191,0.19)] text-[#27DEBF] px-4 p-2 rounded-full";
+    }
+
+    return "text-[#9B9B9B] hover:text-[#c2c2c2]";
+  };
 
   return (
     <header className="relative flex items-center justify-between p-8">
       <Link href="/">
-        <Image src={webhost_logo} alt="webhost logo" width={120} priority />
+        <Image
+          src={webhost_logo}
+          alt="webhost logo"
+          width={120}
+          priority={false}
+        />
       </Link>
 
       <button
@@ -44,12 +63,18 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+            <Link
+              href="#domain"
+              className="text-[#9B9B9B] hover:text-[#c2c2c2]"
+            >
               Domaine
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+            <Link
+              href="#pricing-plan"
+              className="text-[#9B9B9B] hover:text-[#c2c2c2]"
+            >
               Hébergement
             </Link>
           </li>
@@ -61,15 +86,12 @@ export default function Header() {
         </ul>
         <ul className="flex justify-end gap-4">
           <li>
-            <Link href="/login" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+            <Link href="/login" className={isActive("/login")}>
               Connexion
             </Link>
           </li>
           <li>
-            <Link
-              href="/register"
-              className="bg-[rgba(39,222,191,0.19)] text-[#27DEBF] px-4 p-2 rounded-full"
-            >
+            <Link href="/register" className={isActive("/register")}>
               S'inscrire
             </Link>
           </li>
@@ -103,14 +125,19 @@ export default function Header() {
           <hr />
           <ul className="flex flex-col gap-4">
             <li>
-              <Link href="/login" onClick={() => setMenuOpen(false)}>
+              <Link
+                href="/login"
+                className={isActive("/login")}
+                onClick={() => setMenuOpen(false)}
+              >
                 Connexion
               </Link>
             </li>
+
             <li>
               <Link
                 href="/register"
-                className="bg-[rgba(39,222,191,0.19)] text-[#27DEBF] px-4 p-2 rounded-full"
+                className={isActive("/register")}
                 onClick={() => setMenuOpen(false)}
               >
                 S'inscrire
