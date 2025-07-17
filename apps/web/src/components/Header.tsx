@@ -9,7 +9,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 relative">
+    <header className="relative flex items-center justify-between p-8">
       <Link href="/">
         <Image src={webhost_logo} alt="webhost logo" width={120} priority />
       </Link>
@@ -36,36 +36,51 @@ export default function Header() {
         />
       </button>
 
-      <nav className="hidden md:flex items-center w-full gap-8">
-        <ul className="flex gap-6 justify-center flex-1">
+      <nav className="items-center hidden w-full gap-8 md:flex">
+        <ul className="flex justify-center flex-1 gap-6">
           <li>
-            <Link href="#">Accueil</Link>
+            <Link href="/" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+              Accueil
+            </Link>
           </li>
           <li>
-            <Link href="#">Domaine</Link>
+            <Link href="#" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+              Domaine
+            </Link>
           </li>
           <li>
-            <Link href="#">Hébergement</Link>
+            <Link href="#" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+              Hébergement
+            </Link>
           </li>
           <li>
-            <Link href="#">Contact</Link>
+            <Link href="#" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+              Contact
+            </Link>
           </li>
         </ul>
-        <ul className="flex gap-4 justify-end">
+        <ul className="flex justify-end gap-4">
           <li>
-            <Link href="/login">Connexion</Link>
+            <Link href="/login" className="text-[#9B9B9B] hover:text-[#c2c2c2]">
+              Connexion
+            </Link>
           </li>
           <li>
-            <Link href="/register">S'inscrire</Link>
+            <Link
+              href="/register"
+              className="bg-[rgba(39,222,191,0.19)] text-[#27DEBF] px-4 p-2 rounded-full"
+            >
+              S'inscrire
+            </Link>
           </li>
         </ul>
       </nav>
 
       {menuOpen && (
-        <nav className="absolute top-20 right-4 bg-white shadow-lg rounded-md p-6 flex flex-col gap-4 w-56 md:hidden z-40">
+        <nav className="absolute z-40 flex flex-col w-56 gap-4 p-6 bg-white rounded-md shadow-lg top-20 right-4 md:hidden">
           <ul className="flex flex-col gap-4">
             <li>
-              <Link href="#" onClick={() => setMenuOpen(false)}>
+              <Link href="/" onClick={() => setMenuOpen(false)}>
                 Accueil
               </Link>
             </li>
@@ -93,7 +108,11 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/register" onClick={() => setMenuOpen(false)}>
+              <Link
+                href="/register"
+                className="bg-[rgba(39,222,191,0.19)] text-[#27DEBF] px-4 p-2 rounded-full"
+                onClick={() => setMenuOpen(false)}
+              >
                 S'inscrire
               </Link>
             </li>
