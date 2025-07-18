@@ -1,0 +1,59 @@
+[
+  {
+    "title": "STARTER",
+    "price": "8,49€",
+    "per": "/mois",
+    "features": [
+      "1 Site Web",
+      "50 Go de stockage SSD",
+      "1 Compte Email",
+      "100 Go Bande passante",
+      "2 Bases de données",
+      "SSL gratuit",
+      "DNS protégé par Cloudflare",
+      "Sauvegardes hebdomadaires",
+      "1 compte FTP",
+      "Assistance 7j/7",
+      "Garantie de remboursement pendant 30 jours"
+    ],
+    "highlight": false
+  },
+  {
+    "title": "PREMIUM",
+    "price": "15,99€",
+    "per": "/mois",
+    "features": [
+      "100 Sites web",
+      "100 Go de stockage SSD",
+      "Email illimité",
+      "Bande passante illimitée",
+      "Bases de données illimitées",
+      "SSL gratuit",
+      "DNS protégé par Cloudflare",
+      "Sauvegardes hebdomadaires",
+      "Comptes FTP illimités",
+      "Assistance 7j/7",
+      "Garantie de remboursement pendant 30 jours"
+    ],
+    "highlight": true
+  },
+  {
+    "title": "PRO",
+    "price": "20,99€",
+    "per": "/mois",
+    "features": [
+      "100 Sites web",
+      "200 Go de stockage SSD",
+      "Email illimité",
+      "Bande passante illimitée",
+      "Bases de données illimitées",
+      "SSL gratuit",
+      "DNS protégé par Cloudflare",
+      "Sauvegardes hebdomadaires",
+      "Comptes FTP illimités",
+      "Assistance 7j/7",
+      "Garantie de remboursement pendant 30 jours"
+    ],
+    "highlight": false
+  }
+]
