@@ -125,3 +125,11 @@
     background-color: #eefffc;
   }
 }
+
+@media (min-width: 350px) {
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    flex-direction: unset;
+  }
+}
