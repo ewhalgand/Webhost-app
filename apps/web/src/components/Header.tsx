@@ -3,10 +3,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import webhost_logo from "../../public/WPHost.png";
 import { usePathname } from "next/navigation";
+import webhost_logo from "../../public/WPHost.png";
 
-export default function Header() {
+interface User {
+  firstname: string;
+}
+interface HeaderProps {
+  user: User | null;
+}
+
+export default function HeaderClient({ user }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -85,16 +92,22 @@ export default function Header() {
           </li>
         </ul>
         <ul className="flex justify-end gap-4">
-          <li>
-            <Link href="/login" className={isActive("/login")}>
-              Connexion
-            </Link>
-          </li>
-          <li>
-            <Link href="/register" className={isActive("/register")}>
-              S'inscrire
-            </Link>
-          </li>
+          {!user ? (
+            <>
+              <li>
+                <Link href="/login" className={isActive("/login")}>
+                  Connexion
+                </Link>
+              </li>
+              <li>
+                <Link href="/register" className={isActive("/register")}>
+                  S'inscrire
+                </Link>
+              </li>
+            </>
+          ) : (
+            <p className="text-black">{user.firstname}</p>
+          )}
         </ul>
       </nav>
 
@@ -124,25 +137,31 @@ export default function Header() {
           </ul>
           <hr />
           <ul className="flex flex-col gap-4">
-            <li>
-              <Link
-                href="/login"
-                className={isActive("/login")}
-                onClick={() => setMenuOpen(false)}
-              >
-                Connexion
-              </Link>
-            </li>
+            {!user ? (
+              <>
+                <li>
+                  <Link
+                    href="/login"
+                    className={isActive("/login")}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Connexion
+                  </Link>
+                </li>
 
-            <li>
-              <Link
-                href="/register"
-                className={isActive("/register")}
-                onClick={() => setMenuOpen(false)}
-              >
-                S'inscrire
-              </Link>
-            </li>
+                <li>
+                  <Link
+                    href="/register"
+                    className={isActive("/register")}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    S'inscrire
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <p>{user.firstname}</p>
+            )}
           </ul>
         </nav>
       )}
