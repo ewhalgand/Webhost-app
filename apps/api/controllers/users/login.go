@@ -74,5 +74,6 @@ func setAuthCookie(token string) *http.Cookie {
 		Expires:  time.Now().Add(time.Hour * 24),
 		HttpOnly: true,
 		Secure:   false,
+		SameSite: http.SameSiteLaxMode,
 	}
 }
